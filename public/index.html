@@ -159,7 +159,7 @@
         <td class="lbl"><a href="#" onclick="goWelcome();return false;">Bookmarks:</a></td>
         <td>
           <div class="input-wrapper">
-            <select name="bookmarks" id="bookmarks" onchange="setLocation();shredPage();">
+            <select name="bookmarks" id="bookmarks" onchange="shredBookmark();">
               <option value=""></option>
               <option value="" disabled>------- Most visited</option>
               <option value="www.google.com">Google</option>
@@ -230,31 +230,40 @@ var input = document.getElementById('shred-url-input');
 var spinner = document.getElementById('shredder-spinner');
 var display = document.getElementById('display');
 
-function setLocation() {
+function shredBookmark() {
   var sel = document.getElementById('bookmarks');
   var url = sel.options[sel.selectedIndex].value;
-  if (url) {
-    input.value = url;
-    input.focus();
-  }
+  if (url) shredURL(url, 'bookmark');
 }
 function resetList() {
   document.getElementById('bookmarks').selectedIndex = 0;
 }
 function shredPage() {
-  shredURL(input.value);
+  shredURL(input.value, 'input');
 }
-function shredURL(url) {
+function shredHost(u) {
+  try { return new URL(/^https?:\/\//i.test(u) ? u : 'http://' + u).hostname; }
+  catch (e) { return ''; }
+}
+// url = what was shredded; source = how they got there: 'input' (typed/spinner),
+// 'bookmark' (picked from the list), or 'link' (clicked a link inside a shred)
+function shredURL(url, source) {
   if (url && url.trim() !== '') {
-    input.value = url.trim();
+    url = url.trim();
+    input.value = url;
     spinner.classList.add('spinning');
-    display.src = '/shred?frame=n&url=' + encodeURIComponent(url.trim());
+    try {
+      if (window.va) window.va('event', { name: 'shred', data: {
+        url: url.slice(0, 200), host: shredHost(url), source: source || 'input'
+      } });
+    } catch (e) {}
+    display.src = '/shred?frame=n&url=' + encodeURIComponent(url);
     setTimeout(pageLoaded, 30000);
   }
 }
 function loadPage(url) {
   resetList();
-  shredURL(url);
+  shredURL(url, 'link');
 }
 function pageLoaded() {
   spinner.classList.remove('spinning');
