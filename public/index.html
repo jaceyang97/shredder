@@ -276,5 +276,13 @@ window.Stoolbar = {
 
 input.focus({ preventScroll: true });
 </script>
+
+<!-- Vercel Web Analytics. Loaded only on this top-level page (not the welcome
+     or shred iframes) so page views aren't double-counted. The script is served
+     by Vercel at /_vercel/insights/script.js when Analytics is enabled. -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
