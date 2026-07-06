@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Shredder — welcome</title>
+<style>
+  body {
+    margin: 0;
+    padding: 40px 48px;
+    background: #fefefe;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .sheet { max-width: 640px; }
+  h1 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-weight: normal;
+    font-size: 44px;
+    margin: 0 0 4px 0;
+    letter-spacing: 1px;
+  }
+  h1 .frag { display: inline-block; }
+  .subtitle {
+    color: #555;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  p { margin: 0 0 14px 0; }
+  .how {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 14px 18px;
+    margin: 22px 0;
+  }
+  .how b { font-family: 'Courier New', monospace; }
+  a { color: #0020c0; }
+  .credit {
+    margin-top: 34px;
+    padding-top: 12px;
+    border-top: 1px solid #ddd;
+    color: #777;
+    font-size: 11px;
+  }
+  /* a little self-demonstration */
+  .shredded span { display: inline-block; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <h1 class="shredded">
+    <span style="color:#c0392b; transform:translateY(3px)">S</span><span style="color:#111">h</span><span style="color:#2c3e80; transform:translateY(-4px)">r</span><span style="color:#111; transform:translateY(2px)">e</span><span style="color:#1e8449">d</span><span style="color:#111; transform:translateY(-3px)">d</span><span style="color:#b7950b; transform:translateY(4px)">e</span><span style="color:#111">r</span>
+  </h1>
+  <div class="subtitle">a recreation of Mark Napier's Shredder 1.0 (1998)</div>
+
+  <p>The web is not a printed page. Underneath every tidy layout is a stream of raw
+  material — markup, headers, scripts, links, colors — that the browser politely
+  hides from you. The Shredder reads that stream and refuses to be polite.</p>
+
+  <p>Give it a URL and it fetches the page's raw HTTP response, then re-renders it
+  as an abstract composition: the source code chopped into diagonal strips of
+  overlapping type, the images squeezed into thin slivers and tiling columns, the
+  links scattered as live fragments, the palette harvested from the colors the
+  page itself declares. Every shred is different; the randomness is seeded, so a
+  permalink reproduces the same one.</p>
+
+  <div class="how">
+    Type an address in the <b>Location:</b> box above (no http:// needed) and press
+    Enter — or pick something from the <b>Bookmarks</b> list. Links inside a shred
+    are alive: click one and it gets shredded too.
+  </div>
+
+  <p>Nothing about the original page is preserved out of respect. Text may be
+  unreadable, images mangled, structure destroyed. That is the point.</p>
+
+  <div class="credit">
+    Original artwork: <a href="https://www.marknapier.com/portfolio/shredder/" target="_blank">Mark
+    Napier, Shredder 1.0 (1998)</a> — still running at
+    <a href="https://potatoland.org/shredder/" target="_blank">potatoland.org/shredder</a>.<br>
+    This is an independent local recreation of its algorithm, built for study and homage.
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/shred", "destination": "/api/shred" },
+    { "source": "/asset", "destination": "/api/asset" },
+    { "source": "/", "destination": "/public/index.html" },
+    { "source": "/welcome.html", "destination": "/public/welcome.html" }
+  ]
+}

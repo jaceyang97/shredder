@@ -1,0 +1,18 @@
+{
+  "name": "shredder",
+  "version": "1.0.0",
+  "description": "A faithful recreation of Mark Napier's Shredder (1998) — enter a URL, get the page deconstructed into layered fragments of its own source",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/parity.mjs && node test/parity.mjs --dir fixtures-top && node test/engine-output.mjs",
+    "test:parity": "node test/parity.mjs",
+    "test:parity-top": "node test/parity.mjs --dir fixtures-top",
+    "test:engine": "node test/engine-output.mjs",
+    "test:refresh-fixtures": "node test/fetch-fixtures.mjs --refresh"
+  }
+}

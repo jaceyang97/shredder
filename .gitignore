@@ -1,0 +1,23 @@
+# dependencies (none currently — this is a no-dependency project)
+node_modules/
+
+# Vercel CLI local link (contains project/org ids)
+.vercel/
+
+# logs & OS cruft
+*.log
+.DS_Store
+Thumbs.db
+
+# editor
+.idea/
+.vscode/
+
+# Claude Code local settings (personal)
+.claude/settings.local.json
+
+# Captured test fixtures are raw HTML dumps of third-party sites and can embed
+# their own (public) API keys / tracking tokens — never commit them. Regenerate
+# locally with `npm run test:refresh-fixtures` (+ the top-sites manifest).
+test/fixtures/
+test/fixtures-top/

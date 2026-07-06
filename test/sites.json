@@ -1,0 +1,22 @@
+{
+  "note": "Diverse parity-test corpus. `target` is what gets typed into the shredder (no scheme — the engine adds it; slashes must be %2F-encoded when hitting the original engine). All fixtures pinned to srand=1234.",
+  "seed": 1234,
+  "sites": [
+    { "id": "example",       "target": "www.example.com",                          "traits": "minimal, style block, 1 link" },
+    { "id": "graffiti",      "target": "www.graffiti.org/nyc/newyork_4.html",      "traits": "old-school, body-attr colors only, 7 imgs, mailto link, redirects" },
+    { "id": "sito",          "target": "www.sito.org",                             "traits": "style block + inline styles (harvest discriminator)" },
+    { "id": "gallery1",      "target": "potatoland.org/studio/gallery1/loadfli5.htm", "traits": "Napier art page, background= attr" },
+    { "id": "grid6f",        "target": "potatoland.org/seizure/grid6f.htm",        "traits": "frameset recursion" },
+    { "id": "wired",         "target": "www.wired.com",                            "traits": "huge modern page, 55 colors, mp4s, 160+ links" },
+    { "id": "berkshire",     "target": "www.berkshirehathaway.com",                "traits": "ancient plain HTML, font tags" },
+    { "id": "textfiles",     "target": "www.textfiles.com",                        "traits": "bgcolor/font-color attrs, many links" },
+    { "id": "mfws",          "target": "motherfuckingwebsite.com",                 "traits": "bare HTML, inline script" },
+    { "id": "craigslist",    "target": "www.craigslist.org",                       "traits": "forms/inputs, modern CSS with 4/8-digit hex" },
+    { "id": "npr",           "target": "text.npr.org",                             "traits": "text-only modern, many links" },
+    { "id": "hn",            "target": "news.ycombinator.com",                     "traits": "table layout, small CSS" },
+    { "id": "wikipedia",     "target": "en.wikipedia.org/wiki/Paper_shredder",     "traits": "modern heavy, many links/images, 8-digit hex in CSS" },
+    { "id": "w3c",           "target": "www.w3.org",                               "traits": "standards org, external+inline CSS" },
+    { "id": "google",        "target": "www.google.com",                           "traits": "form inputs (input harvest evidence)" },
+    { "id": "jodi",          "target": "wwwww.jodi.org",                           "traits": "net.art chaos, blink/pre" }
+  ]
+}
